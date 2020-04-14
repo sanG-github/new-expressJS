@@ -1,0 +1,20 @@
+extends ../layouts/common
+
+block content
+	h1.ml-5 Login To Enjoy
+	
+	if(errors)
+		ul
+			each error in errors
+				li.alert.alert-danger(role='alert')
+					span= error
+
+	nav.navbar.navbar-light.bg-light
+		form(action="/auth/login", method="POST")
+			label(for="user") Username: 
+				input#user.form-control.mr-sm-2(type= "email", name= "name", value = value ? value.name : "")
+			br
+			label(for="password") Password:
+				input#password.form-control.mr-sm-2(type= "password", name= "password", value = value ? value.password : "")
+			br
+			button.btn.btn-secondary.my-2.my-sm-0 Login

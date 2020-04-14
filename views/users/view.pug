@@ -1,0 +1,13 @@
+extends ../layouts/common
+
+block content
+
+	.card(style='width: 18rem;').rounded.mx-auto.d-block
+		img.card-img-top(src='https://picsum.photos/200/120')
+		.card-body
+			h5.card-title= user.name
+			p.card-text
+				p= "ID: " + user.id
+				p= "Password: " + user.password
+			a.btn.btn-primary(href='#') Say Helloooo
+

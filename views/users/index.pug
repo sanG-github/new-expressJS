@@ -1,0 +1,16 @@
+extends ../layouts/common
+
+block content
+	a(href='/users/create')
+		span.badge.badge-info New User
+
+	nav.navbar.navbar-light.bg-light
+		form.form-inline(action="/users/search", method="GET")
+			input.form-control.mr-sm-2(type= "search", name= "q")
+			button.btn.btn-secondary.my-2.my-sm-0 Search
+
+	ul.list-group
+		each user in users
+			li.list-group-item= user.name
+				a(href="/users/view/" + user.id)
+					span.float-right View
